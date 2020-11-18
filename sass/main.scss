@@ -1,0 +1,393 @@
+// Font Link
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+// Variables
+:root {
+  // Colors
+  --Strong-Cyan: hsl(171, 66%, 44%);
+  --Light-Blue: hsl(233, 100%, 69%);
+  --Dark-Grayish-Blue: hsl(210, 10%, 33%);
+  --Grayish-Blue: hsl(201, 11%, 66%);
+  // Font Size
+  --font-size: 1.8rem;
+}
+
+// Basic Styling
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // Equals to 10px = 1rem
+
+  @media screen and (max-width: 440px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: var(--font-size);
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--Dark-Grayish-Blue);
+}
+p {
+  color: var(--Grayish-Blue);
+}
+
+img {
+  max-width: 100%;
+}
+
+// Buttons
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 440px) {
+    flex-direction: column;
+  }
+  .btn {
+    margin: 0 0.8rem;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    color: #fff;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-3px);
+    }
+    &:active {
+      opacity: 0.9;
+      transform: translateY(3px);
+    }
+  }
+  .btn-green {
+    background-color: var(--Strong-Cyan);
+    animation: slideInFromLeft 1.5s ease-in-out;
+    @media screen and (max-width: 440px) {
+      margin-bottom: 2rem;
+    }
+  }
+  .btn-blue {
+    background-color: var(--Light-Blue);
+    animation: slideInFromRight 1.5s ease-in-out;
+  }
+}
+
+// Container Width for Desktop
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+// Header Styling
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-bottom: 0.8rem;
+  padding: 10rem 0;
+  background-image: url(../images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+
+  @media screen and (max-width: 440px) {
+    background-image: url(../images/bg-header-mobile.png);
+    padding: 10 1rem;
+  }
+
+  &__logo {
+    color: var(--Strong-Cyan);
+    margin-bottom: 5rem;
+    line-height: 1;
+    animation: slideInFromTop 1.5s ease-in-out;
+  }
+  &__heading {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    animation: slideInFromTop 1.5s ease-in-out;
+  }
+  &__details {
+    //   width: 45%;
+    // margin: 0 auto;
+    padding: 0 20vw;
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    animation: slideInFromTop 1.5s ease-in-out;
+
+    @media screen and (max-width: 440px) {
+      padding: 0 10vw;
+    }
+  }
+}
+
+// Snippet Sections Styling
+.snippets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 3rem 0 6rem 0;
+
+  &__heading {
+    font-weight: bold;
+    font-size: 3.2rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    animation: slideInFromLeft 1.5s ease-in-out;
+  }
+  &__details {
+    // width: 45%;
+    // margin: 0 auto;
+    padding: 0 20vw;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    animation: slideInFromRight 1.5s ease-in-out;
+    @media screen and (max-width: 440px) {
+      padding: 0 10vw;
+    }
+  }
+}
+
+// Grid Section Styling
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  margin-bottom: 10rem;
+  @media screen and (max-width: 440px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 5rem;
+  }
+
+  &__column--1 {
+    padding: 1rem;
+    animation: slideInFromLeft 1.5s ease-in-out;
+  }
+  &__column--2 {
+    padding: 5rem;
+    animation: slideInFromRight 1.5s ease-in-out;
+    @media screen and (max-width: 440px) {
+      text-align: center;
+    }
+
+    & > div {
+      margin-bottom: 4rem;
+    }
+  }
+
+  //   Column Headings
+  .grid__column--heading {
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+  }
+}
+
+// Image Section Styling
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: block;
+  }
+}
+
+// Services Sectiion Styling
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-bottom: 10rem;
+  text-align: center;
+
+  @media screen and (max-width: 440px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 5rem;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__logo {
+    margin-bottom: 2.5rem;
+  }
+  &__heading {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  &__details {
+    width: 85%;
+  }
+}
+
+// Section Logos
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5rem 0 10rem 0;
+
+  @media screen and (max-width: 440px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 5rem;
+  }
+
+  img {
+    justify-self: center;
+    @media screen and (max-width: 440px) {
+      justify-self: center;
+      align-self: center;
+      margin: 1rem 0;
+    }
+  }
+}
+
+// Main Footer Styling
+
+.footermain {
+  padding: 5rem 0;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 4fr;
+  gap: 2rem;
+  align-items: center;
+
+  @media screen and (max-width: 440px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-top: 2.5rem;
+  }
+
+  &__logo {
+    color: var(--Strong-Cyan);
+  }
+  div span {
+    display: block;
+    cursor: pointer;
+    color: var(--Grayish-Blue);
+
+    &:hover {
+      color: var(--Dark-Grayish-Blues);
+    }
+  }
+  div span:first-child {
+    margin-bottom: 0.5rem;
+  }
+
+  &__social {
+    text-align: right;
+
+    @media screen and (max-width: 440px) {
+      text-align: center;
+    }
+
+    & > i {
+      margin-right: 2rem;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .install {
+    align-self: flex-start;
+  }
+}
+
+// Footer author
+.footerauthor {
+  padding: 3rem 0;
+  text-align: center;
+
+  a {
+    color: var(--Dark-Grayish-Blue);
+    font-weight: 600;
+    border-bottom: 1px dotted var(--Dark-Grayish-Blue);
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--Grayish-Blue);
+      border-bottom: 1px dotted var(--Grayish-Blue);
+    }
+  }
+}
+
+// Keyframe Animations
+
+// From Top
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
