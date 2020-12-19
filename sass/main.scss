@@ -185,6 +185,10 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem;
   margin-bottom: 10rem;
+  @media screen and (max-width: 840px) {
+    grid-template-columns: 1fr;
+  }
+
   @media screen and (max-width: 440px) {
     grid-template-columns: 1fr;
     margin-bottom: 5rem;
@@ -197,6 +201,9 @@ main {
   &__column--2 {
     padding: 5rem;
     animation: slideInFromRight 1.5s ease-in-out;
+    @media screen and (max-width: 840px) {
+      text-align: center;
+    }
     @media screen and (max-width: 440px) {
       text-align: center;
     }
@@ -231,6 +238,9 @@ main {
   gap: 5rem;
   margin-bottom: 10rem;
   text-align: center;
+  @media screen and (max-width: 840px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media screen and (max-width: 440px) {
     grid-template-columns: 1fr;
@@ -265,6 +275,12 @@ main {
   align-items: center;
   text-align: center;
   margin: 5rem 0 10rem 0;
+
+  @media screen and (max-width: 840px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    width: 100%;
+  }
 
   @media screen and (max-width: 440px) {
     grid-template-columns: 1fr;
